@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I Love You</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 100px;
+      background-color: #ffe6e6;
+    }
+
+    h1 {
+      color: #ff4d4d;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    #yesBtn {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #ff4d4d;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>I Love You ❤️</h1>
+  <p>Do you love me?</p>
+
+  <button id="yesBtn" class="btn">Yes</button>
+  <button id="noBtn" class="btn">No</button>
+
+  <h2 id="result"></h2>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const result = document.getElementById("result");
+
+    // No button moves when mouse goes near
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    // Yes button click
+    yesBtn.addEventListener("click", () => {
+      result.innerText = "Yay! I knew it ❤️😍";
+    });
+  </script>
+
+</body>
+</html>
